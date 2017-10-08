@@ -51,9 +51,9 @@ class Validator {
 			);
 
 			if ($output === false && $output !== false) {
-				$this->errors[] = "Exception on $field_value";
+				$this->errors[$rule_data['field_name']] = "Exception on $field_value";
 			}elseif ($output !== true) {
-				$this->errors[] = $rule_data['fail_message'];
+				$this->errors[$rule_data['field_name']] = $rule_data['fail_message'];
 			}
 		}
 
